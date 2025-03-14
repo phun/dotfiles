@@ -5,10 +5,6 @@ if [[ -r "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh" ]]
   source "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh"
 fi
 
-# Coloring
-export CLICOLOR=1
-export LS_COLORS="di=34:ln=35:so=32:pi=33:ex=31:bd=36;01:cd=33;01:su=31;40;07:sg=36;40;07:tw=32;40;07:ow=33;40;07:"
-zstyle -e ':completion:*:default' list-colors 'reply=("${PREFIX:+=(#bi)($PREFIX:t)(?)*==34=34}:${(s.:.)LS_COLORS}")';
 
 # Exports
 export LD_LIBRARY_PATH=/usr/local/lib
@@ -17,7 +13,12 @@ export PATH="$PATH:$HOME/bin:/opt/nvim-linux-x86_64/bin"
 export TERM=xterm-256color
 
 # Custom aliases
+
+# '..' short hand for 'cd ..'
 alias ..="cd .."
+# Always color results in 'ls'
+alias ls='ls --color=auto'
+# Location of saved dotfiles
 alias dotfiles="cd $HOME/.local/share/chezmoi"
 
 # Automatically start TMUX with the same session each time
