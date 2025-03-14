@@ -1,0 +1,6 @@
+# zsh instead of bash
+if [ "$SHELL" != "/usr/bin/zsh" ]
+then
+    export SHELL="/usr/bin/zsh"
+    exec /usr/bin/zsh    # -l: login shell again
+fi
