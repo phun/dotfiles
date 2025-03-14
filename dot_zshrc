@@ -20,11 +20,22 @@ alias ..="cd .."
 alias ls='ls --color=auto'
 # Location of saved dotfiles
 alias dotfiles="cd $HOME/.local/share/chezmoi"
+alias dotadd="chezmoi add $1"
 
 # Automatically start TMUX with the same session each time
 if ! { [ -n "$TMUX" ]; } then
     tmux attach-session -t one-true-session || tmux new-session -s one-true-session
 fi
+
+# Enable history
+HISTFILE=~/.zsh_history        # File where history is saved
+HISTSIZE=10000                 # Number of commands to keep in memory
+SAVEHIST=10000                 # Number of commands to save in the history file
+HISTCONTROL=ignoredups         # Avoid duplicates in history
+setopt append_history          # Append to history file, don't overwrite it
+setopt share_history           # Make it available immediately
+setopt hist_ignore_dups        # Ignore duplicate commands
+setopt hist_find_no_dups       # Prevent finding duplicates in history search
 
 # Install bundles via antigen
 [[ ! -d ~/.zsh/antigen ]] &&
