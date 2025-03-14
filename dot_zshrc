@@ -18,6 +18,7 @@ export TERM=xterm-256color
 
 # Custom aliases
 alias ..="cd .."
+alias dotfiles="cd $HOME/.local/share/chezmoi"
 
 # Automatically start TMUX with the same session each time
 if ! { [ -n "$TMUX" ]; } then
