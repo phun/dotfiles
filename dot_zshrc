@@ -19,10 +19,11 @@ alias ..="cd .."
 # Always color results in 'ls'
 alias ls='ls --color=auto'
 # Location of saved dotfiles
-alias cd_dot="cd $HOME/.local/share/chezmoi"
-alias dot_add="chezmoi add $1"
+alias ew="cd $HOME/development/Etsyweb"
+alias cdd="cd $HOME/.local/share/chezmoi"
+alias dota="chezmoi add $1"
 # Location of kickstart.nvim
-alias cd_init="cd $HOME/.config/nvim"
+alias cdc="cd $HOME/.config/nvim"
 
 # Automatically start TMUX with the same session each time
 if ! { [ -n "$TMUX" ]; } then
