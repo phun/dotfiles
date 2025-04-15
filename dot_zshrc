@@ -1,10 +1,14 @@
+# Automatically start TMUX with the same session each time
+if ! { [ -n "$TMUX" ]; } then
+  tmux attach-session -t one-true-session || tmux new-session -s one-true-session
+fi
+
 # Enable Powerlevel10k instant prompt. Should stay close to the top of ~/.zshrc.
 # Initialization code that may require console input (password prompts, [y/n]
 # confirmations, etc.) must go above this block; everything else may go below.
 if [[ -r "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh" ]]; then
   source "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh"
 fi
-
 
 # Exports
 export LD_LIBRARY_PATH=/usr/local/lib
@@ -24,11 +28,6 @@ alias cdd="cd $HOME/.local/share/chezmoi"
 alias dota="chezmoi add $1"
 # Location of kickstart.nvim
 alias cdc="cd $HOME/.config/nvim"
-
-# Automatically start TMUX with the same session each time
-if ! { [ -n "$TMUX" ]; } then
-    tmux attach-session -t one-true-session || tmux new-session -s one-true-session
-fi
 
 # Enable history
 HISTFILE=~/.zsh_history        # File where history is saved
