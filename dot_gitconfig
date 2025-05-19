@@ -1,0 +1,21 @@
+[core]
+  excludesfile = /home/pnguyen/.gitignore
+  editor = nvim
+  symlinks = true
+[user]
+  name = pnguyen
+  email = pnguyen@etsy.com
+[github]
+  user = pnguyen
+[alias]
+  com = checkout main
+  ms = merge --squash --no-commit
+  diffc = diff --cached
+  mms = !git checkout master && git rpull && git ms $1
+  res = restore --staged
+  c = commit -m
+[rebase]
+  autoStash = true
+[push]
+  autoSetupRemote = true
+  default = current
