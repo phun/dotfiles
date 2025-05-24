@@ -1,5 +1,5 @@
 # Automatically start TMUX with the same session each time
-if ! { [ -n "$TMUX" ]; } then
+if [ -n "$SSH_CONNECTION" ] && ! { [ -n "$TMUX" ]; } then
   tmux attach-session -t one-true-session || tmux new-session -s one-true-session
 fi
 
